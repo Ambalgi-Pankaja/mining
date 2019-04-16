@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+  maven: acomodeo/maven@1.0
+
+workflows:
+  version: 2.1
+  test-and-deploy:
+    jobs:
+      - maven/checkout_code
+      - maven/lint:
+          requires:
+            - maven/checkout_code
+      - maven/build:
+          requires:
+            - maven/checkout_code
+      - maven/test:
+          requires:
+            - maven/build
+      - maven/deploy:
+          webhook_url: https://builder.acomodeo.com/hooks/jar-to-docker
+          maven_registry_domain: storage-bin.acomodeo.build
+          requires:
+            - maven/build
+            - maven/test
+            - maven/lint
+

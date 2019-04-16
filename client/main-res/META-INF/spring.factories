@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.acomodeo.mining.client.MiningProperties,\
+  com.acomodeo.mining.client.MiningClientFactory

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>parent</artifactId>
+        <groupId>com.acomodeo.mining</groupId>
+        <version>dev-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mining-client</artifactId>
+    <packaging>jar</packaging>
+    <name>mining-client</name>
+
+    <dependencies>
+        <!--Internal dependencies-->
+        <dependency>
+            <groupId>com.acomodeo.mining</groupId>
+            <artifactId>mining-model</artifactId>
+            <version>dev-SNAPSHOT</version>
+        </dependency>
+        <!-- Acomodeo dependencies -->
+        <dependency>
+            <groupId>com.acomodeo</groupId>
+            <artifactId>semanticid</artifactId>
+            <version>master-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acomodeo.kotlin-utils</groupId>
+            <artifactId>clients</artifactId>
+            <version>master-SNAPSHOT</version>
+        </dependency>
+        <!-- Spring dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
